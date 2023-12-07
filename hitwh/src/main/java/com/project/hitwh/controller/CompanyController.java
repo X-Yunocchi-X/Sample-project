@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -38,6 +39,12 @@ public class CompanyController {
     public ResponseEntity<Company> getCompanyById(@PathVariable String id) {
         Company company = companyService.getCompanyNameByID(id);
         return ResponseEntity.ok(company);
+    }
+    
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Integer> deleteCompanyById(@PathVariable String id) {
+        int result = companyService.deleteCompanyByID(id);
+        return ResponseEntity.ok(result);
     }
     
     @GetMapping("/{id}/courses")
