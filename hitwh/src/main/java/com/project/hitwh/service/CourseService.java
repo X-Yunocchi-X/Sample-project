@@ -13,4 +13,6 @@ public interface CourseService {
     int insertCourse(Course course);
     
     int deleteCourseById(String id);
+    
+    int deleteCourseAboutCompany(String id);
 }

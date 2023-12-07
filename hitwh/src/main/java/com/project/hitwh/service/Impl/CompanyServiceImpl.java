@@ -46,4 +46,9 @@ public class CompanyServiceImpl implements CompanyService{
         return companyMapper.deleteCompanyByID(id);
     }
 
+    @Override
+    public int removeCourseByID(String companyID, String courseID) {
+        return companyMapper.removeCourseByID(companyID, courseID);
+    }
+
 }

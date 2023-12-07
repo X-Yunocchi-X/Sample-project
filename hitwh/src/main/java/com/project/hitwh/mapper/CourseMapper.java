@@ -24,4 +24,7 @@ public interface CourseMapper {
     @Delete("delete from Courses where CourseID = #{id}")
     int deleteCourseById(String id);
 
+    @Delete("delete from CompanyCourses where CourseID = #{id}")
+    int deleteCourseAboutCompany(String id);
+
 }

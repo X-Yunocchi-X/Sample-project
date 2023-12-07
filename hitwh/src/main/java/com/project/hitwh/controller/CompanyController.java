@@ -2,6 +2,7 @@ package com.project.hitwh.controller;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Delete;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -53,6 +54,12 @@ public class CompanyController {
     public ResponseEntity<List<Course>> getCoursesByCompanyID(@PathVariable String id) {
         List<Course> courses = companyService.getCoursesByCompanyID(id);
         return ResponseEntity.ok(courses);
+    }
+    
+    @DeleteMapping("/{id}/courses/{courseID}")
+    public ResponseEntity<?> removeCourseByID(@PathVariable("id") String companyID, @PathVariable("courseID") String courseID) {
+        int result = companyService.removeCourseByID(companyID, courseID);
+        return ResponseEntity.ok(result);
     }
     
 }

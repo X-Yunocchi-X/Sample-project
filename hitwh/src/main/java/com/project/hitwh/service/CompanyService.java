@@ -19,4 +19,6 @@ public interface CompanyService {
     
     public int findNewestCompanyID();
 
+    public int removeCourseByID(String companyID, String courseID);
+
 }

@@ -30,5 +30,8 @@ public interface CompanyMapper {
 
     @Select("select * from Companies")
     List<Company> getAllCompanies();
+
+    @Delete("delete from CompanyCourses where CompanyID = #{companyID} and CourseID = #{courseID}")
+    int removeCourseByID(String companyID, String courseID);
     
 }

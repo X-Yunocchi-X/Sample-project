@@ -32,7 +32,13 @@ public class CourseServiceImpl implements CourseService{
 
     @Override
     public int deleteCourseById(String id) {
+        courseMapper.deleteCourseAboutCompany(id);
         return courseMapper.deleteCourseById(id);
+    }
+
+    @Override
+    public int deleteCourseAboutCompany(String id) {
+        return courseMapper.deleteCourseAboutCompany(id);
     }
 
 }
