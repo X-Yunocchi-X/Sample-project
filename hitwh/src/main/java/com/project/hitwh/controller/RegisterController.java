@@ -25,12 +25,12 @@ public class RegisterController {
     //     account: "123",
     //     password: "123",
     //     role: 0, // or 1, 0 means company, 1 means student
-    //     addtion: {
+    //     addition: {
     //         name: "123",
     //         address: "123",
     //     }
     //     if role is 1, then addtion is:
-    //     addtion: {
+    //     addition: {
     //         name: "123",
     //         gender: "123",
     //         occupation: "123",
@@ -44,7 +44,7 @@ public class RegisterController {
         int role = jsonNode.get("role").asInt();
         String account = jsonNode.get("account").asText();
         String password = jsonNode.get("password").asText();
-        JsonNode additionNode = jsonNode.get("addtion");
+        JsonNode additionNode = jsonNode.get("addition");
         Map<String, Object> addition = mapper.convertValue(additionNode, new TypeReference<Map<String, Object>>(){});
         authorizeService.register(role, account, password, addition);
         return ResponseEntity.ok().build();

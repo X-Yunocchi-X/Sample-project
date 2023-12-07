@@ -19,7 +19,7 @@ public interface CompanyMapper {
     @Select("select c.* from Courses c join CompanyCourses cc on c.CourseID = cc.CourseID where cc.CompanyID = #{id}")
     List<Course> getCoursesByCompanyID(String id);
     
-    @Insert("insert into Companies(CompanyName) values(#{companyName})")
+    @Insert("insert into Companies(CompanyName, Address) values(#{companyName}, #{address})")
     int insertCompany(Company company);
 
     @Select("select max(CompanyID) from Companies")
