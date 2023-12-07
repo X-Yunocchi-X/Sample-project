@@ -2,6 +2,7 @@ package com.project.hitwh.mapper;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
@@ -19,5 +20,8 @@ public interface CourseMapper {
     
     @Insert("insert into Courses(CourseName, StartDate, DurationDays, InstructorID) values(#{courseName}, #{startDate}, #{durationDays}, #{instructorID})")
     int insertCourse(Course course);
+
+    @Delete("delete from Courses where CourseID = #{id}")
+    int deleteCourseById(String id);
 
 }

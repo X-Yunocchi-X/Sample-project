@@ -30,4 +30,9 @@ public class CourseServiceImpl implements CourseService{
         return courseMapper.insertCourse(course);
     }
 
+    @Override
+    public int deleteCourseById(String id) {
+        return courseMapper.deleteCourseById(id);
+    }
+
 }
